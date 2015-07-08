@@ -38,3 +38,7 @@
 ##### memory limits
 
 * constrain then monitor for inconsistencies
+* restart memory hogs
+* -m 100M --oom-kill-disable / linux oom out-of-memory killer is aggresive
+* cgroup_enable=memory swapaccount=1 / passed as kernel param to grub.conf & menu.lst
+
