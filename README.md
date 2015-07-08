@@ -1,0 +1,2 @@
+# dockerize
+docker talk notes
