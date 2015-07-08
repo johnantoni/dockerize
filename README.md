@@ -2,6 +2,18 @@
 
 *modulus docker talk notes*
 
+##### good dockerfile
+
+    FROM ubuntu:14.04.02 
+    MAINTAINER Aaron Brongersma
+    RUN apt-get update \ 
+    apt-get install -y curl git \
+    build-essential nginx=1.8.0 \ 
+    imagemagick php5 && \ 
+    apt-get clean
+    CMD [“nginx”, “-g”, “daemon off;”] 
+    EXPOSE 80
+
 ##### dockerfile
 
 * single responsibility
@@ -41,4 +53,11 @@
 * restart memory hogs
 * -m 100M --oom-kill-disable / linux oom out-of-memory killer is aggresive
 * cgroup_enable=memory swapaccount=1 / passed as kernel param to grub.conf & menu.lst
+
+##### service discovery
+
+* treat containers like cattle not pets
+* use an ambassador container when linking
+* enable tls for docker
+* -- etcd, consul, zookeeper, swarm
 
